@@ -2,16 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import Typewriter from "typewriter-effect/dist/core";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import Projets from "../components/Projets";
 import styles from "../styles/Home.module.css";
 import { Animated } from "react-animated-css";
-import "aos/dist/aos.css";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import Reveal from "react-reveal/Reveal";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Navbar } from "../components/Navbar";
 import { useEffect, useState } from "react";
 import "animate.css";
