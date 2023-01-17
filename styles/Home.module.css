@@ -1004,12 +1004,13 @@
     margin: 2rem auto 0rem;
     
   }
-  .blockLeft>h4>span {
+  .containerFormation> .blockLeft>h4>span {
+    
     font-size: 20px;
   }
   .blockRightSkillsBackend {
     width: 100%;
-    height: 24re
+    height: 24rem
     ;
   }
   .mesProjets{
