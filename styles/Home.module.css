@@ -135,7 +135,7 @@
   margin: 10px 0;
 }
 .mesProjetsContainer{
-  overflow-y: scroll;
+  overflow-x: scroll;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 0 auto;
@@ -553,8 +553,7 @@
   margin-bottom: 20px;
 }
 .image {
-  width: 700px;
-  height: 700px;
+  width: 90%;
   cursor: pointer;
   border-radius: 10%;
 }
