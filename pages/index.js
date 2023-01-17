@@ -3,6 +3,7 @@ import Image from "next/image";
 import Typewriter from "typewriter-effect/dist/core";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Projets from "../components/Projets";
+import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 import { Animated } from "react-animated-css";
 import Zoom from "react-reveal/Zoom";
@@ -51,32 +52,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         {/* <Navbar /> */}
-        <section className={styles.container}>
-          <div className={styles.contentLeft}>
-            <Animated animationIn="fadeInUp" isVisible={true}>
-              <h1 className={styles.title}>Oussama Dabachil</h1>
-              <h2 className={styles.subtitle}>
-                Développeur FullStack Javascript
-              </h2>
-            </Animated>
+        <Header />
 
-            <ul>
-              <li>Mes formations</li>
-              <li>Mes compétences</li>
-              <li>Mes projets</li>
-              <li>Me contacter</li>
-            </ul>
-          </div>
-          <div className={styles.contentRight}>
-            <Animated animationIn="fadeInRight" isVisible={true}>
-              <img
-                className={styles.image}
-                src="/oussama2.jpeg"
-                alt="React Image"
-              />
-            </Animated>
-          </div>
-        </section>
         <section className={styles.containertwo}>
           <Zoom>
             <figure>
@@ -374,12 +351,10 @@ export default function Home() {
             </div>
           </section>
           <div className={styles.containerProjets}>
-           
             <h3 className={styles.titleAccueil2}>Mes projets</h3>
             <div className={styles.mesProjetsContainer}>
               <div className={styles.mesProjetsContainer}>
-                <Projets/>
-    
+                <Projets />
               </div>
             </div>
           </div>
