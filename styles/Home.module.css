@@ -136,6 +136,7 @@
 }
 .mesProjetsContainer{
   overflow-x: scroll;
+  overflow-y: hidden;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 0 auto;
