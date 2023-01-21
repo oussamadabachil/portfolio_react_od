@@ -1,4 +1,5 @@
 import styles from "../styles/Home.module.css";
+import styleAnimation from "../styles/AB.module.css";
 import Reveal from "react-reveal/Reveal";
 import config from "react-reveal/globals";
 import { Animated } from "react-animated-css";
@@ -8,6 +9,20 @@ export default function Header() {
   return (
     <>
       <section className={styles.container}>
+        <div className={styleAnimation.area}>
+          <ul className={styleAnimation.circles}>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
         <div className={styles.contentLeft}>
           <Animated animationIn="fadeInUp" isVisible={true}>
             <h1 className={styles.title}>Oussama Dabachil</h1>

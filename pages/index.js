@@ -354,6 +354,7 @@ export default function Home() {
             <h3 className={styles.titleAccueil2}>Mes projets</h3>
             <div className={styles.ProjetsContainer}>
               <div className={styles.mesProjetsContainer}>
+                
                 <Projets />
               </div>
               <button className={styles.seeMoreProjets}>Voir d'autres projets</button>
