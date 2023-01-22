@@ -2,49 +2,79 @@ import styles from "../styles/Home.module.css";
 import Reveal from "react-reveal/Reveal";
 import { useState } from "react";
 import config from "react-reveal/globals";
+import "react-slideshow-image/dist/styles.css";
+import { Link } from 'react-router-dom';
+import { Slide } from "react-slideshow-image";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { faClose, faGift, faGlobe } from "@fortawesome/free-solid-svg-icons";
 export default function Projets() {
+  const spanStyle = {
+    padding: "20px",
+    background: "#efefef",
+    color: "#000000",
+  };
+
+  const divStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundSize: "cover",
+    height: "400px",
+  };
+  const slideImages = [
+    {
+      url: "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+      caption: "Slide 1",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
+      caption: "Slide 2",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+      caption: "Slide 3",
+    },
+  ];
 
   let infosProjets = [
     {
       id: "1",
       titre: "Clone de Twitter",
       description:
-        "Dans le cadre de notre projet , nous avons réalisé un clone de Twitter en seulement 2 jours.",
-      image: "/twitterpngWhite.jpg",
+        "Dans le cadre du deuxième hackaton ,  nous avions pour objectif de réaliser un clone de Twitter en seulement 2 jours. C'était un véritable challenge car on venait à peine de commencer à apprendre React. Nous avons réussi à réaliser un clone de Twitter avec quelques fonctionnalités de base.",
+      image: "/background_images/2.jpg",
       techno: ["React", "Next", "MongoDb", "Express", "NodeJs"],
     },
     {
       id: "2",
       titre: "Site de billetterie",
       description:
-      "Dans le cadre de notre projet , nous avons réalisé un site de billetterie en seulement 2 jours.",
-      image: "/tickethackpngWhite.jpg",
-      techno: ["HTML",'CSS', "Javascript", "MongoDb", "Express", "NodeJs"],
+        "Dans le cadre du premier hackaton ,  nous avions pour objectif de réaliser un site de billetterie en seulement 2 jours . C'est un site permettant d'acheter des billets pour des places de train entre deux villes . On s'est bien régalé à le réaliser.",
+      image: "/background_images/3.jpg",
+      techno: ["HTML", "CSS", "Javascript", "MongoDb", "Express", "NodeJs"],
     },
     {
       id: "3",
       titre: "Site d'informations",
       description:
-      "Dans le cadre de notre projet , nous avons réalisé un site d'informations en seulement 2 jours.",  
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", 'API'],
+        "Dans le cadre de notre projet , nous avons réalisé un site d'informations en seulement 2 jours.",
+      image: "/background_images/4.jpg",
+
+      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
     },
     {
       id: "4",
       titre: "Site d'affiches de films",
       description:
-      "Dans le cadre de notre projet , nous avons réalisé un site d'affiches de films en seulement 2 jours.",
-      image: "/oussflixpng.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", 'API'],
+        "Dans le cadre de notre projet , nous avons réalisé un site d'affiches de films en seulement 2 jours.",
+      image: "/background_images/5.jpg",
+        techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
     },
   ];
 
-      
-
-let showCss = {
-}
+  let showCss = {};
 
   config({ ssrFadeout: true });
 
@@ -54,39 +84,70 @@ let showCss = {
   const handleClick = (e) => {
     setShow(true);
     setId(e.target.dataset.id);
-    alert(infosProjets[0].titre);
-
-
-
   };
 
-
-  const hideModal = ()=>{
+  const hideModal = () => {
     setShow(false);
+  };
 
+  if (show) {
+    showCss = {
+      opacity: "1",
+      visibility: "visible",
+    };
   }
-
-
-  if(show){
-showCss = {
- opacity:'1',
- visibility :'visible',
-}
-
-  }
-
-
 
   return (
     <>
+      <div
+        className={styles.opacityBlur}
+        style={showCss}
+        onClick={hideModal}
+      ></div>
       <div className={styles.modalProjets} style={showCss}>
         <span onClick={hideModal}>
-          <FontAwesomeIcon  className={styles.iconClose} icon={faClose}></FontAwesomeIcon>
+          <FontAwesomeIcon
+            className={styles.iconClose}
+            icon={faClose}
+          ></FontAwesomeIcon>
         </span>
         <div className={styles.contentModalLeft}>
-          <h4>Salut {infosProjets[id-1].titre}</h4>
+          <h4>Voici le projet {infosProjets[id - 1].titre}
+          
+</h4>
+          <div className={styles.contentModalLeftImage}
+          
+          style={{
+            backgroundImage: `url(${infosProjets[id - 1].image})`,
+
+          }}
+          ></div>
         </div>
-        <div className={styles.contentModalRight}></div>
+        <div className={styles.contentModalRight}>
+          <h4>Contexte</h4>
+
+          <p>{infosProjets[id - 1].description}</p>
+
+          <h4>Technologies utilisées</h4>
+          <div className={styles.contentModalRightTechno}>
+            {infosProjets[id - 1].techno.map((techno) => (
+              <span>{techno}</span>
+            ))}
+          </div>
+
+          <h4>Liens</h4>
+          <div className={styles.contentModalRightLinks}>
+            <button>Voir le frontend</button>
+            <button>Voir le backend</button>
+            <button className={styles.goToWeb}>
+              <FontAwesomeIcon
+                className={styles.iconGoToWeb}
+                icon={faGlobe}
+              ></FontAwesomeIcon>
+              Voir le site
+            </button>
+          </div>
+        </div>
       </div>
 
       <Reveal effect="fadeInUp">
