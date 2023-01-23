@@ -8,6 +8,7 @@ import styles from "../styles/Home.module.css";
 import { Animated } from "react-animated-css";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
+import OtherProjets from "../components/OtherProjets";
 import Reveal from "react-reveal/Reveal";
 import { Navbar } from "../components/Navbar";
 import { useEffect, useState } from "react";
@@ -16,6 +17,23 @@ import config from "react-reveal/globals";
 
 export default function Home() {
   config({ ssrFadeout: true });
+
+  const [seeMore, setSeeMore] = useState(false);
+
+  const actionSeeMore = () => {
+    setSeeMore(true);
+  };
+
+  let seeMoreProjets = {};
+  if (seeMore) {
+    seeMoreProjets = {
+      display: "flex",
+    };
+  } else {
+    seeMoreProjets = {
+      display: "none",
+    };
+  }
 
   const [isDarkMode, setIsDarkMode] = useState(false);
   <Typewriter
@@ -354,10 +372,17 @@ export default function Home() {
             <h3 className={styles.titleAccueil2}>Mes projets</h3>
             <div className={styles.ProjetsContainer}>
               <div className={styles.mesProjetsContainer}>
-                
                 <Projets />
               </div>
-              <button className={styles.seeMoreProjets}>Voir d'autres projets</button>
+              <div
+                className={styles.mesProjetsContainer}
+                style={seeMoreProjets}
+              >
+                <OtherProjets />
+              </div>
+              <button className={styles.seeMoreProjets} onClick={actionSeeMore}>
+                Voir d'autres projets
+              </button>
             </div>
           </div>
         </section>

@@ -3,7 +3,7 @@ import Reveal from "react-reveal/Reveal";
 import { useState } from "react";
 import config from "react-reveal/globals";
 import "react-slideshow-image/dist/styles.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,6 +46,11 @@ export default function Projets() {
         "Dans le cadre du deuxième hackaton ,  nous avions pour objectif de réaliser un clone de Twitter en seulement 2 jours. C'était un véritable challenge car on venait à peine de commencer à apprendre React. Nous avons réussi à réaliser un clone de Twitter avec quelques fonctionnalités de base.",
       image: "/background_images/2.jpg",
       techno: ["React", "Next", "MongoDb", "Express", "NodeJs"],
+      link: [
+        "https://github.com/oussamadabachil/frontend-teewt",
+        "https://github.com/oussamadabachil/backend-teewt",
+        "https://frontend-teewt.vercel.app/",
+      ],
     },
     {
       id: "2",
@@ -54,6 +59,11 @@ export default function Projets() {
         "Dans le cadre du premier hackaton ,  nous avions pour objectif de réaliser un site de billetterie en seulement 2 jours . C'est un site permettant d'acheter des billets pour des places de train entre deux villes . On s'est bien régalé à le réaliser.",
       image: "/background_images/3.jpg",
       techno: ["HTML", "CSS", "Javascript", "MongoDb", "Express", "NodeJs"],
+      link: [
+        "https://github.com/oussamadabachil/frontend-teewt",
+        "https://github.com/oussamadabachil/backend-teewt",
+        "https://frontend-teewt.vercel.app/",
+      ],
     },
     {
       id: "3",
@@ -63,6 +73,11 @@ export default function Projets() {
       image: "/background_images/4.jpg",
 
       techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
+      link: [
+        "https://github.com/oussamadabachil/frontend-teewt",
+        "https://github.com/oussamadabachil/backend-teewt",
+        "https://frontend-teewt.vercel.app/",
+      ],
     },
     {
       id: "4",
@@ -70,7 +85,12 @@ export default function Projets() {
       description:
         "Dans le cadre de notre projet , nous avons réalisé un site d'affiches de films en seulement 2 jours.",
       image: "/background_images/5.jpg",
-        techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
+      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
+      link: [
+        "https://github.com/oussamadabachil/frontend-teewt",
+        "https://github.com/oussamadabachil/backend-teewt",
+        "https://frontend-teewt.vercel.app/",
+      ],
     },
   ];
 
@@ -111,18 +131,18 @@ export default function Projets() {
             icon={faClose}
           ></FontAwesomeIcon>
         </span>
+        <Reveal effect="fadeInUp">
         <div className={styles.contentModalLeft}>
-          <h4>Voici le projet {infosProjets[id - 1].titre}
-          
-</h4>
-          <div className={styles.contentModalLeftImage}
-          
-          style={{
-            backgroundImage: `url(${infosProjets[id - 1].image})`,
+          <h4>Voici le projet {infosProjets[id - 1].titre}</h4>
 
-          }}
+          <div
+            className={styles.contentModalLeftImage}
+            style={{
+              backgroundImage: `url(${infosProjets[id - 1].image})`,
+            }}
           ></div>
         </div>
+        </Reveal>
         <div className={styles.contentModalRight}>
           <h4>Contexte</h4>
 
@@ -134,22 +154,28 @@ export default function Projets() {
               <span>{techno}</span>
             ))}
           </div>
-
           <h4>Liens</h4>
           <div className={styles.contentModalRightLinks}>
-            <button>Voir le frontend</button>
-            <button>Voir le backend</button>
-            <button className={styles.goToWeb}>
+            <a href={infosProjets[id - 1].link[0]} target="_blank">
+              Voir le frontend
+            </a>
+            <a href={infosProjets[id - 1].link[1]} target="_blank">
+              Voir le backend
+            </a>
+            <a
+              href={infosProjets[id - 1].link[2]}
+              target="_blank"
+              className={styles.goToWeb}
+            >
               <FontAwesomeIcon
                 className={styles.iconGoToWeb}
                 icon={faGlobe}
               ></FontAwesomeIcon>
               Voir le site
-            </button>
+            </a>
           </div>
         </div>
       </div>
-
       <Reveal effect="fadeInUp">
         <div className={styles.mesProjets}>
           <img src="/twitterpngWhite.jpg" alt="projet 1" />
@@ -178,7 +204,7 @@ export default function Projets() {
       </Reveal>
       <Reveal effect="fadeInUp">
         <div className={styles.mesProjets}>
-          <img src="oussflixpng.jpg" alt="projet 2" />
+          <img src="ousssnews.gif" alt="projet 2" />
           <h4>Site d'informations</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
