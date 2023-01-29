@@ -43,7 +43,7 @@ export default function Projets() {
       id: "1",
       titre: "Clone de Twitter",
       description:
-        "Dans le cadre du deuxième hackaton ,  nous avions pour objectif de réaliser un clone de Twitter en seulement 2 jours. C'était un véritable challenge car on venait à peine de commencer à apprendre React. Nous avons réussi à réaliser un clone de Twitter avec quelques fonctionnalités de base.",
+        "Dans le cadre du deuxième hackaton ,  nous avions pour objectif de réaliser un clone de Twitter en seulement 2 jours. C'était un véritable challenge car on venait à peine de commencer à apprendre React. Nous avons réussi à réaliser un clone de Twitter avec quelques fonctionnalités de base , (si il y'a un problème au niveau de l'icone 'like'  , je suis entrain de le régler (rafraichissez svp XD)",
       image: "/background_images/2.jpg",
       techno: ["React", "Next", "MongoDb", "Express", "NodeJs"],
       link: [
@@ -60,9 +60,9 @@ export default function Projets() {
       image: "/background_images/3.jpg",
       techno: ["HTML", "CSS", "Javascript", "MongoDb", "Express", "NodeJs"],
       link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
+        "https://github.com/oussamadabachil/frontendTicketHack",
+        "https://github.com/oussamadabachil/backendTicketHack",
+        "https://oussamadabachil.github.io/frontendTicketHack/",
       ],
     },
     {
@@ -133,7 +133,7 @@ export default function Projets() {
         </span>
         <Reveal effect="fadeInUp">
         <div className={styles.contentModalLeft}>
-          <h4>Voici le projet {infosProjets[id - 1].titre}</h4>
+          <h4>{infosProjets[id - 1].titre}</h4>
 
           <div
             className={styles.contentModalLeftImage}
@@ -181,8 +181,7 @@ export default function Projets() {
           <img src="/twitterpngWhite.jpg" alt="projet 1" />
           <h4>Clone de Twitter</h4>
           <p>
-            Dans le cadre de notre projet , nous avons réalisé un clone de
-            Twitter en seulement 2 jours.
+           {infosProjets[0].description.substring(0,80)+"..."}
           </p>
           <button onClick={handleClick} data-id="1">
             En savoir plus
@@ -194,8 +193,8 @@ export default function Projets() {
           <img src="tickethackpngWhite.jpg" alt="projet 2" />
           <h4>Site de billetterie</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quae.
+          {infosProjets[1].description.substring(0,80)+"..."}
+
           </p>
           <button onClick={handleClick} data-id="2">
             En savoir plus
@@ -207,8 +206,8 @@ export default function Projets() {
           <img src="ousssnews.gif" alt="projet 2" />
           <h4>Site d'informations</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quae.
+          {infosProjets[2].description.substring(0,80)+"..."}
+
           </p>
           <button onClick={handleClick} data-id="3">
             En savoir plus
@@ -220,8 +219,7 @@ export default function Projets() {
           <img src="oussflixpng.jpg" alt="projet 2" />
           <h4>Site d'affiches de films</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quae.
+          {infosProjets[3].description.substring(0,80)+"..."}
           </p>
           <button onClick={handleClick} data-id="4">
             En savoir plus
