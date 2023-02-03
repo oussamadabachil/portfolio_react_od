@@ -18,7 +18,7 @@ export default function OtherProjets() {
     {
       id: "6",
       titre: "Application Rappel Islam",
-      description:
+      description: 
         "Rappel Islam est une application qui permet de nous rappeler de notre Créateur , vous y trouverez  des rappels écrits et audio et vous aurez droit à des notifications qui vous rappeleront le droit chemin.",
       image: "/background_images/2.jpg",
       techno: ["Swift Storyboard"],
