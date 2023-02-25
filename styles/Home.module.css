@@ -585,7 +585,7 @@
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 22rem;
+  height: auto;
   margin: 20px auto;
   font-family: "Montserrat", sans-serif;
 }

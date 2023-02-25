@@ -233,11 +233,9 @@ export default function OtherProjets() {
           <h4>Liens</h4>
           <div className={styles.contentModalRightLinks}>
             <a href={infosOtherProjets[id-6].link[0]} target="_blank">
-              Voir le frontend
+              Voir sur github
             </a>
-            <a href={infosOtherProjets[id-6].link[1]} target="_blank">
-              Voir le backend
-            </a>
+           
             <a
               href={infosOtherProjets[id-6].link[2]}
               target="_blank"

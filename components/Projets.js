@@ -157,11 +157,9 @@ export default function Projets() {
           <h4>Liens</h4>
           <div className={styles.contentModalRightLinks}>
             <a href={infosProjets[id - 1].link[0]} target="_blank">
-              Voir le frontend
+              Voir sur github
             </a>
-            <a href={infosProjets[id - 1].link[1]} target="_blank">
-              Voir le backend
-            </a>
+         
             <a
               href={infosProjets[id - 1].link[2]}
               target="_blank"
