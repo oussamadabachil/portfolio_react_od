@@ -6,19 +6,17 @@ import "react-slideshow-image/dist/styles.css";
 import { Link } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 
+import Contact from "./Contact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faClose, faGift, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
-
 export default function OtherProjets() {
-
-  
   let infosOtherProjets = [
     {
       id: "6",
       titre: "Application Rappel Islam",
-      description: 
+      description:
         "Rappel Islam est une application qui permet de nous rappeler de notre Créateur , vous y trouverez  des rappels écrits et audio et vous aurez droit à des notifications qui vous rappeleront le droit chemin.",
       image: "/background_images/2.jpg",
       techno: ["Swift Storyboard"],
@@ -160,7 +158,7 @@ export default function OtherProjets() {
         "https://frontend-teewt.vercel.app/",
       ],
     },
-     {
+    {
       id: "12",
       titre: "Design site e-commerce",
       description:
@@ -213,7 +211,7 @@ export default function OtherProjets() {
           ></FontAwesomeIcon>
         </span>
         <div className={styles.contentModalLeft}>
-          <h4>{infosOtherProjets[id-6].titre}</h4>
+          <h4>{infosOtherProjets[id - 6].titre}</h4>
           <div
             className={styles.contentModalLeftImage}
             style={{
@@ -223,21 +221,21 @@ export default function OtherProjets() {
         </div>
         <div className={styles.contentModalRight}>
           <h4>Contexte</h4>
-          <p>{infosOtherProjets[id-6].description}</p>
+          <p>{infosOtherProjets[id - 6].description}</p>
           <h4>Technologies utilisées</h4>
           <div className={styles.contentModalRightTechno}>
-            {infosOtherProjets[id-6].techno.map((techno) => (
+            {infosOtherProjets[id - 6].techno.map((techno) => (
               <span>{techno}</span>
             ))}
           </div>
           <h4>Liens</h4>
           <div className={styles.contentModalRightLinks}>
-            <a href={infosOtherProjets[id-6].link[0]} target="_blank">
+            <a href={infosOtherProjets[id - 6].link[0]} target="_blank">
               Voir sur github
             </a>
-           
+
             <a
-              href={infosOtherProjets[id-6].link[2]}
+              href={infosOtherProjets[id - 6].link[2]}
               target="_blank"
               className={styles.goToWeb}
             >
@@ -250,6 +248,7 @@ export default function OtherProjets() {
           </div>
         </div>
       </div>
+
       <Reveal effect="fadeInUp">
         <div className={styles.mesProjets}>
           <img src="rappelislam.png" alt="projet 5" />

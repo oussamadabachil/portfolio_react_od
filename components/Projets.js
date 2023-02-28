@@ -5,7 +5,7 @@ import config from "react-reveal/globals";
 import "react-slideshow-image/dist/styles.css";
 import { Link } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
-
+import Contact from "./Contact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faClose, faGift, faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -224,6 +224,7 @@ export default function Projets() {
           </button>
         </div>
       </Reveal>
+
     </>
   );
 }

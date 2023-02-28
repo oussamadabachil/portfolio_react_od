@@ -16,6 +16,38 @@ import "animate.css";
 import config from "react-reveal/globals";
 
 export default function Home() {
+  const [checkTest, setCheckTest] = useState(false);
+
+  const [messageMess, setMessageMess] = useState("");
+  const [messageButton, setMessageButton] = useState("Envoyer");
+  const regexMail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+  const [userMail, setUserMail] = useState("");
+  const [userMessage, setUserMessage] = useState("");
+  let styleDots = {
+    opacity: 1,
+    visibility: "visible",
+    transition: "all .3s",
+  };
+  let styleMessM = {
+    opacity: 0,
+    visibility: "hidden",
+    transition: "all .3s",
+  };
+  let buttonStyle = {
+    cursor: "not-allowed",
+  };
+
+  const sendMessage = () => {
+    if (userMail.match(regexMail) && userMessage.length > 0) {
+      
+
+        setMessageMess("Message envoyé");
+      
+    } else {
+      alert("no");
+    }
+  };
+
   config({ ssrFadeout: true });
 
   const [seeMore, setSeeMore] = useState(false);
@@ -52,9 +84,30 @@ export default function Home() {
     }}
   />;
   // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
+    //   AOS.init();
+    //   AOS.refresh();
+
+    if (userMail.match(regexMail) && userMessage.length > 0) {
+      // setMessageMess("Message prêt à l'envoi");
+
+      buttonStyle = {
+        cursor: "pointer",
+      };
+      styleMessM = {
+        opacity: 1,
+        visibility: "visible",
+        transition: "all .3s",
+      };
+      styleDots = {
+        opacity: 0,
+        visibility: "hidden",
+        transition: "all .3s",
+      };
+    }
   // }, []);
+  // if (checkTest) {
+  //   setMessageMess("Votre message est prët à l'envoi");
+  // }
   return (
     <>
       <Head>
@@ -386,6 +439,42 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <div className={styles.contactBox}>
+          <div className={styles.boxMessage}>
+            <div className={styles.col3}>
+              <p style={styleMessM}>{messageMess}</p>
+              <div style={styleDots} className={styles.dotFlashing}></div>
+            </div>
+          </div>
+
+          <h2>Me contacter</h2>
+          <div className={styles.flexContactBox}>
+            <label>Votre adresse-mail</label>
+            <input
+              onChange={(e) => {
+                setUserMail(e.target.value);
+              }}
+              className={styles.inputContact}
+              placeholder="Insérer votre adresse-mail"
+            />
+            <label>Votre message</label>
+            <textarea
+              onChange={(e) => {
+                setUserMessage(e.target.value);
+              }}
+              placeholder="Insérer votre message"
+            />
+            <button
+              onClick={() => {
+                sendMessage();
+              }}
+              style={buttonStyle}
+            >
+              {messageButton}
+            </button>
+          </div>
+        </div>
       </main>
       <footer></footer>
     </>
