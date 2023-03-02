@@ -71,7 +71,7 @@
   height: 3rem;
   background-color: rgb(255, 255, 255);
 }
-.flexContactBox > button {
+.flexContactBox > input:last-child {
   transition: all 0.3s;
   background-color: #ebd4a1;
   display: block;
