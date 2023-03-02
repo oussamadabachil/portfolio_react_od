@@ -504,6 +504,8 @@ export default function Home() {
           </div> */}
 
           <h2>Me contacter</h2>
+          <Reveal effect="fadeInUp">
+
           <form   className={styles.flexContactBox} ref={form} onSubmit={sendEmail}>
 
             <label>Votre nom complet</label>
@@ -532,6 +534,7 @@ export default function Home() {
             />
              <input type="submit" value="Send" />
                         </form>
+                        </Reveal>
         </div>
       </main>
       <footer></footer>

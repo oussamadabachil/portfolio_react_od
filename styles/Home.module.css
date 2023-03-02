@@ -1196,3 +1196,12 @@
   cursor: pointer;
   outline: 2px solid rgb(255, 25, 100);
 }
+
+
+@media screen and (max-width: 700px){
+
+  .boxMessage {
+    display: none;
+  }
+
+}
