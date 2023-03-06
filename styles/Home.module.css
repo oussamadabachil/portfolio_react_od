@@ -918,9 +918,7 @@
     width: 100%;
     height: auto;
   }
-  .mesProjets {
-    width: 20rem;
-  }
+ 
   .containerCompetence > div > .titleTypeSkills {
     font-size: 45px;
     font-weight: 700;
@@ -1204,4 +1202,10 @@
     display: none;
   }
 
+  .mesProjets > button {
+    width: 10rem;
+  }
+  .mesProjets {
+    width: 14rem;
+  }
 }

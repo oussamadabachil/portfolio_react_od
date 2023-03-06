@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import Typewriter from "typewriter-effect/dist/core";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Projets from "../components/Projets";
@@ -12,24 +12,18 @@ import Fade from "react-reveal/Fade";
 import OtherProjets from "../components/OtherProjets";
 import Reveal from "react-reveal/Reveal";
 import { Navbar } from "../components/Navbar";
-import { useEffect, useState , useRef} from "react";
+import { useEffect, useState, useRef } from "react";
 import "animate.css";
 import config from "react-reveal/globals";
 
 export default function Home() {
-   const form = useRef();
-
-     const sendEmail = (e) => {
-      e.preventDefault()
-    emailjs.sendForm('service_o9focop', 'template_17b4d7m', form.current, 'vYYfs8J7TWV1CxDQ9')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-  };
-
-
+  const [values, setValues] = useState({
+    fullName: '',
+    email: '',
+    role: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
   const [checkTest, setCheckTest] = useState(false);
 
   const [messageMess, setMessageMess] = useState("");
@@ -99,6 +93,28 @@ export default function Home() {
     };
   }
 
+  const form = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.send( "service_o9focop",
+    "template_8bu2pef",
+    form.current,
+    "vYYfs8J7TWV1CxDQ9")
+      .then(response => {
+        console.log('SUCCESS!', response);
+        setValues({
+          userMail: userMail,
+          userFullName: userFullName,
+          userMessage: userMessage,
+        });
+        setStatus('SUCCESS');
+      }, error => {
+        console.log('FAILED...', error);
+      });
+  }
+
+
+
   const [isDarkMode, setIsDarkMode] = useState(false);
   <Typewriter
     onInit={(typewriter) => {
@@ -115,9 +131,9 @@ export default function Home() {
         .start();
     }}
   />;
-  // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
+  useEffect(() => {
+    emailjs.init("service_o9focop");
+  });
 
   if (
     userMail.match(regexMail) &&
@@ -148,10 +164,14 @@ export default function Home() {
       transition: "all .3s",
     };
   }
-  // }, []);
-  // if (checkTest) {
-  //   setMessageMess("Votre message est prët à l'envoi");
-  // }
+  useEffect(() => {
+    if(status === 'SUCCESS') {
+      setTimeout(() => {
+        setStatus('');
+      }, 3000);
+    }
+  }, [status]);
+
   return (
     <>
       <Head>
@@ -505,36 +525,34 @@ export default function Home() {
 
           <h2>Me contacter</h2>
           <Reveal effect="fadeInUp">
+            <form className={styles.flexContactBox} onSubmit={handleSubmit}>
+              <label>Votre nom complet</label>
 
-          <form   className={styles.flexContactBox} ref={form} onSubmit={sendEmail}>
-
-            <label>Votre nom complet</label>
-
-            <input
-              onChange={(e) => {
-                setUserFullName(e.target.value);
-              }}
-              className={styles.inputContact}
-              placeholder="Insérer votre nom complet"
-            />
-            <label>Votre adresse-mail</label>
-            <input
-              onChange={(e) => {
-                setUserMail(e.target.value);
-              }}
-              className={styles.inputContact}
-              placeholder="Insérer votre adresse-mail"
-            />
-            <label>Votre message</label>
-            <textarea
-              onChange={(e) => {
-                setUserMessage(e.target.value);
-              }}
-              placeholder="Insérer votre message"
-            />
-             <input type="submit" value="Send" />
-                        </form>
-                        </Reveal>
+              <input
+                onChange={(e) => {
+                  setUserFullName(e.target.value);
+                }}
+                className={styles.inputContact}
+                placeholder="Insérer votre nom complet"
+              />
+              <label>Votre adresse-mail</label>
+              <input
+                onChange={(e) => {
+                  setUserMail(e.target.value);
+                }}
+                className={styles.inputContact}
+                placeholder="Insérer votre adresse-mail"
+              />
+              <label>Votre message</label>
+              <textarea
+                onChange={(e) => {
+                  setUserMessage(e.target.value);
+                }}
+                placeholder="Insérer votre message"
+              />
+              <input type="submit" value="Send" />
+            </form>
+          </Reveal>
         </div>
       </main>
       <footer></footer>
