@@ -311,6 +311,11 @@
   border-radius: 1rem;
 }
 .seeMoreProjets {
+  color: #000;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  text-align: center;
+  text-decoration: none;
   font-weight: 600;
   cursor: pointer;
   display: block;
@@ -320,7 +325,6 @@
   border-radius: 0.3rem;
   font-family: Montserrat;
   font-size: 1.3rem;
-  height: 3rem;
   transition: all 0.3s;
 }
 .seeMoreProjets:hover {
@@ -457,6 +461,7 @@
   margin: 10px 0;
 }
 .mesProjetsContainer {
+  width: 100%;
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -827,6 +832,10 @@
   background-color: rgb(103, 168, 165);
   color: #fff;
   transition: all 0.3s ease-in-out;
+}
+.contentLeft > ul > li>a{
+  text-decoration: none;
+  color: white;
 }
 .contentLeft > ul > li {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

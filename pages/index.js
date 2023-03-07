@@ -13,17 +13,17 @@ import OtherProjets from "../components/OtherProjets";
 import Reveal from "react-reveal/Reveal";
 import { Navbar } from "../components/Navbar";
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "animate.css";
+import Swal from "sweetalert2";
+
+// CommonJS
 import config from "react-reveal/globals";
 
 export default function Home() {
-  const [values, setValues] = useState({
-    fullName: '',
-    email: '',
-    role: '',
-    message: ''
-  });
-  const [status, setStatus] = useState('');
+  const Swal = require("sweetalert2");
+
+  const [status, setStatus] = useState("");
   const [checkTest, setCheckTest] = useState(false);
 
   const [messageMess, setMessageMess] = useState("");
@@ -31,6 +31,12 @@ export default function Home() {
   const regexMail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
   const [userMail, setUserMail] = useState("");
   const [userFullName, setUserFullName] = useState("");
+
+  const [values, setValues] = useState({
+    fullName: "",
+    email: "",
+    message: "",
+  });
 
   const [userMessage, setUserMessage] = useState("");
   let styleDots = {
@@ -96,24 +102,63 @@ export default function Home() {
   const form = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.send( "service_o9focop",
-    "template_8bu2pef",
-    form.current,
-    "vYYfs8J7TWV1CxDQ9")
-      .then(response => {
-        console.log('SUCCESS!', response);
-        setValues({
-          userMail: userMail,
-          userFullName: userFullName,
-          userMessage: userMessage,
-        });
-        setStatus('SUCCESS');
-      }, error => {
-        console.log('FAILED...', error);
+
+    if (
+      userMail.match(regexMail) &&
+      userMessage.length > 0 &&
+      userFullName.length > 0
+    ) {
+      setMessageMess("Message envoyé");
+      boxMessStyle2 = {
+        width: "13rem",
+        height: "3rem",
+        opacity: 1,
+        visibility: "visible",
+        transition: "all .3s",
+      };
+
+      let valuesObj = {
+        userName: userFullName,
+        userMail: userMail,
+        userMessage: userMessage,
+      };
+      emailjs
+        .send(
+          "service_o9focop",
+          "template_8bu2pef",
+          valuesObj,
+          "vYYfs8J7TWV1CxDQ9"
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response);
+            setStatus("SUCCESS");
+            Swal.fire({
+              title: "Parfait!",
+              text: "Votre message a bien été envoyé",
+              icon: "success",
+              confirmButtonText: "Yeah",
+            });
+          },
+          (error) => {
+            console.log("FAILED...", error);
+            Swal.fire({
+              title: "Aïe!",
+              text: error,
+              icon: "error",
+              confirmButtonText: "Oups",
+            });
+          }
+        );
+    } else {
+      Swal.fire({
+        title: "Ah!",
+        text: "Remplissez tous vos champs correctement",
+        icon: "warning",
+        confirmButtonText: "Ok !",
       });
-  }
-
-
+    }
+  };
 
   const [isDarkMode, setIsDarkMode] = useState(false);
   <Typewriter
@@ -165,12 +210,19 @@ export default function Home() {
     };
   }
   useEffect(() => {
-    if(status === 'SUCCESS') {
+    if (status === "SUCCESS") {
       setTimeout(() => {
-        setStatus('');
+        setStatus("");
       }, 3000);
     }
   }, [status]);
+
+  const handleChange = (e) => {
+    setValues((values) => ({
+      ...values,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   return (
     <>
@@ -193,7 +245,7 @@ export default function Home() {
         {/* <Navbar /> */}
         <Header />
 
-        <section className={styles.containertwo}>
+        <section id="pres" className={styles.containertwo}>
           <Zoom>
             <figure>
               <img
@@ -376,7 +428,7 @@ export default function Home() {
               </div>
             </Reveal>
           </div>
-          <h3 className={styles.titleAccueil}>Mes compétences</h3>
+          <h3 id='comp'className={styles.titleAccueil}>Mes compétences</h3>
           <section className={styles.containerthree}>
             <div className={styles.containerCompetence}>
               <Reveal effect="fadeInLeft">
@@ -490,20 +542,21 @@ export default function Home() {
             </div>
           </section>
           <div className={styles.containerProjets}>
-            <h3 className={styles.titleAccueil2}>Mes projets</h3>
+            <h3 id='proj'className={styles.titleAccueil2}>Mes projets</h3>
             <div className={styles.ProjetsContainer}>
               <div className={styles.mesProjetsContainer}>
                 <Projets />
               </div>
               <div
+              id="proj2"
                 className={styles.mesProjetsContainer}
                 style={seeMoreProjets}
               >
                 <OtherProjets />
               </div>
-              <button className={styles.seeMoreProjets} onClick={actionSeeMore}>
+              <a href="#proj2" className={styles.seeMoreProjets} onClick={actionSeeMore}>
                 Voir d'autres projets
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -523,7 +576,7 @@ export default function Home() {
             </div>
           </div> */}
 
-          <h2>Me contacter</h2>
+          <h2 id='cont'>Me contacter</h2>
           <Reveal effect="fadeInUp">
             <form className={styles.flexContactBox} onSubmit={handleSubmit}>
               <label>Votre nom complet</label>
@@ -540,6 +593,8 @@ export default function Home() {
                 onChange={(e) => {
                   setUserMail(e.target.value);
                 }}
+                name="email"
+                type="email"
                 className={styles.inputContact}
                 placeholder="Insérer votre adresse-mail"
               />
@@ -550,7 +605,7 @@ export default function Home() {
                 }}
                 placeholder="Insérer votre message"
               />
-              <input type="submit" value="Send" />
+              <input type="submit" value="Envoyer" />
             </form>
           </Reveal>
         </div>

@@ -3,6 +3,7 @@ import styleAnimation from "../styles/AB.module.css";
 import Reveal from "react-reveal/Reveal";
 import config from "react-reveal/globals";
 import { Animated } from "react-animated-css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   config({ ssrFadeout: true });
@@ -32,10 +33,10 @@ export default function Header() {
           </Animated>
 
           <ul>
-            <li>Mes formations</li>
-            <li>Mes compétences</li>
-            <li>Mes projets</li>
-            <li>Me contacter</li>
+            <li><a href="#pres">Mes formations</a></li>
+            <li><a href="#comp">Mes compétences</a></li>
+            <li><a href='#proj'>Mes projets</a></li>
+            <li><a href='#cont'>Me contacter</a></li>
           </ul>
         </div>
         <div className={styles.contentRight}>
