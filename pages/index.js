@@ -535,6 +535,40 @@ export default function Home() {
                 </div>
               </Reveal>
             </div>
+            <div className={styles.containerCompetence}>
+              <Reveal effect="fadeInLeft">
+                <div className={styles.blockLeftSkills}>
+                  <h4 className={styles.titleTypeSkills}>Database</h4>
+                </div>
+              </Reveal>
+              <Reveal effect="fadeInRight">
+                <div className={styles.blockRightSkillsBackend}>
+                  <ul>
+                    <li>
+                     GraphQL
+                      <span>
+                        <hr className={styles.animatedHr}></hr>
+                      </span>
+                    </li>
+                    <li>
+                      MySQL
+                      <span>
+                        <hr className={styles.animatedHr}></hr>
+                      </span>
+                    </li>
+                    <li>
+                      MongoDB
+                      <span>
+                        <hr style={{
+
+                          margin:'10px 0 20px'
+                        }}className={styles.animatedHr}></hr>
+                      </span>
+                    </li>    
+                  </ul>
+                </div>
+              </Reveal>
+            </div>
           </section>
           <div className={styles.containerProjets}>
             <h3 id='proj'className={styles.titleAccueil2}>Mes projets</h3>

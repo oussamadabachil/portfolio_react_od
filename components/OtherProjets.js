@@ -77,9 +77,7 @@ export default function OtherProjets() {
         "Ce site permet aux personnes de s'inscrire et de pouvoir consulter des activités sportives . Ils peuvent aussi réserver leur séances mais aussi consulter leur profil et leurs réservations .",
       image: "/background_images/5.jpg",
       techno: ["HTML", "CSS", "Javascript", "PHP", "MySQL"],
-      link: [
-    
-      ],
+      link: [],
     },
     {
       id: "11",
@@ -91,8 +89,7 @@ export default function OtherProjets() {
       link: [
         "https://github.com/oussamadabachil/portfolio_apple_od",
 
-        "https://oussamadabachil.github.io/portfolio_apple_od/"
-
+        "https://oussamadabachil.github.io/portfolio_apple_od/",
       ],
     },
     {
@@ -105,7 +102,6 @@ export default function OtherProjets() {
       link: [
         "https://github.com/oussamadabachil/maquetteholyjanvier/settings/pages",
         "https://oussamadabachil.github.io/maquetteholyjanvier/",
-
       ],
     },
   ];
@@ -170,10 +166,10 @@ export default function OtherProjets() {
           <h4>Liens</h4>
           <div className={styles.contentModalRightLinks}>
             {infosOtherProjets[id - 6].link.length == 0 ? (
-              <button>Pas encore de lien 😖</button>
+              <button>Pas encore de lien ...</button>
             ) : infosOtherProjets[id - 6].link.length == 1 ? (
               <a href={infosOtherProjets[id - 6].link[0]} target="_blank">
-               Lien vers la page
+                Lien vers la page
               </a>
             ) : infosOtherProjets[id - 6].link.length == 2 ? (
               <>
