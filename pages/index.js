@@ -530,12 +530,7 @@ export default function Home() {
                         <hr className={styles.animatedHr}></hr>
                       </span>
                     </li>
-                    <li>
-                      Symphony
-                      <span>
-                        <hr className={styles.animatedHr}></hr>
-                      </span>
-                    </li>
+                  
                   </ul>
                 </div>
               </Reveal>

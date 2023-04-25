@@ -17,14 +17,10 @@ export default function OtherProjets() {
       id: "6",
       titre: "Application Rappel Islam",
       description:
-        "Rappel Islam est une application qui permet de nous rappeler de notre Créateur , vous y trouverez  des rappels écrits et audio et vous aurez droit à des notifications qui vous rappeleront le droit chemin.",
+        "Rappel Islam est ma première application faite en Swift .Elle permet de nous rappeler de notre Créateur , on y trouve  des rappels écrits et audio et vous aurez droit à des notifications qui vous rappeleront le Créateur .",
       image: "/background_images/2.jpg",
       techno: ["Swift Storyboard"],
-      link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
-      ],
+      link: ["https://apps.apple.com/fr/app/rappel-islam/id1551535646"],
     },
     {
       id: "7",
@@ -33,34 +29,29 @@ export default function OtherProjets() {
         "J'ai conçu ce site pour un garagiste et puis hébergé chez Hostinger .",
 
       image: "/background_images/3.jpg",
-      techno: ["HTML", "CSS", "Javascript", "MongoDb", "Express", "NodeJs"],
+      techno: ["HTML", "CSS", "Javascript"],
       link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
+        "https://github.com/oussamadabachil/bbhpieceautofinal",
+        "http://www.bbhlacourneuve.com/",
       ],
     },
     {
       id: "7",
       titre: "Application Toutoucare",
       description:
-        "  L'application Toutoucare permet à des propriétaires de chiens d'inscrire leur chien dans une crèche spécialisée . Vous pouvez réserver à l'horaire que vous voulez , accéder et télécharger vos factures ",
+        "Dans le cadre de la semaine de projet , nous avons réalisé avec mon équipe l'application Toutoucare . Cette application permet à des propriétaires de chiens d'inscrire leur chien dans une crèche spécialisée . On peut réserver à l'horaire que vous voulez , accéder et télécharger nos factures ",
       image: "/background_images/4.jpg",
 
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
-      link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
-      ],
+      techno: ["React Native", "Expo", "MongoDb", "Express", "NodeJs", "TDD"],
+      link: [],
     },
     {
       id: "8",
       titre: "Site d'affiches de films",
       description:
-        "Cette page web présente le film Dragon Ball Super : Broly . Vous y trouverez des moments cultes et épiques du film ",
+        "Cette page web présente le film Dragon Ball Super : Broly . On y trouve des moments cultes et épiques du film ",
       image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
+      techno: ["HTML", "CSS", "Javascript"],
       link: [
         "https://github.com/oussamadabachil/frontend-teewt",
         "https://github.com/oussamadabachil/backend-teewt",
@@ -71,13 +62,12 @@ export default function OtherProjets() {
       id: "9",
       titre: "Site Clone Instagram",
       description:
-        " Ce site est un clone de la page de connexion Instragram . Une fois que vous êtes connectés , vous trouverez un message de bienvenue",
+        "Ce site est un clone de la page de connexion Instragram . Une fois connectés , on y trouve un message de bienvenue ",
       image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
+      techno: ["HTML", "CSS", "Javascript"],
       link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
+        "https://github.com/oussamadabachil/pagedecoinsta",
+        "https://oussamadabachil.github.io/pagedecoinsta/",
       ],
     },
     {
@@ -86,24 +76,23 @@ export default function OtherProjets() {
       description:
         "Ce site permet aux personnes de s'inscrire et de pouvoir consulter des activités sportives . Ils peuvent aussi réserver leur séances mais aussi consulter leur profil et leurs réservations .",
       image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
+      techno: ["HTML", "CSS", "Javascript", "PHP", "MySQL"],
       link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
+    
       ],
     },
     {
       id: "11",
       titre: "Portfolio design Apple",
       description:
-        " Ce site est l'un de mes premiers portfolios (car oui j'en ai fais (beaucoup) , mais pour celui-ci , je me suis un peu inspiré du site d'Apple",
+        " Il s'agit de l'un de mes premiers portfolios, car j'en ai créé beaucoup auparavant. Pour celui-ci, j'ai pris un peu d'inspiration du site web d'Apple.",
       image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
+      techno: ["HTML", "CSS", "Javascript"],
       link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
+        "https://github.com/oussamadabachil/portfolio_apple_od",
+
+        "https://oussamadabachil.github.io/portfolio_apple_od/"
+
       ],
     },
     {
@@ -112,66 +101,16 @@ export default function OtherProjets() {
       description:
         "J'ai intégré une maquette dans le site en utilisant (from scratch) et aussi créé le menu mobile sur le site (bien sur from scratch)",
       image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
+      techno: ["HTML", "CSS", "Javascript", "Prestashop"],
       link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
-      ],
-    },
-    {
-      id: "13",
-      titre: "Design site e-commerce",
-      description:
-        "J'ai intégré une maquette dans le site en utilisant (from scratch) et aussi créé le menu mobile sur le site (bien sur from scratch)",
-      image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
-      link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
-      ],
-    },
-    {
-      id: "14",
-      titre: "Design site e-commerce",
-      description:
-        "J'ai intégré une maquette dans le site en utilisant (from scratch) et aussi créé le menu mobile sur le site (bien sur from scratch)",
-      image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
-      link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
-      ],
-    },
-    {
-      id: "12",
-      titre: "Design site e-commerce",
-      description:
-        "J'ai intégré une maquette dans le site en utilisant (from scratch) et aussi créé le menu mobile sur le site (bien sur from scratch)",
-      image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
-      link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
-      ],
-    },
-    {
-      id: "12",
-      titre: "Design site e-commerce",
-      description:
-        "J'ai intégré une maquette dans le site en utilisant (from scratch) et aussi créé le menu mobile sur le site (bien sur from scratch)",
-      image: "/background_images/5.jpg",
-      techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
-      link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
+        "https://github.com/oussamadabachil/maquetteholyjanvier/settings/pages",
+        "https://oussamadabachil.github.io/maquetteholyjanvier/",
+
       ],
     },
   ];
+
+  //condition
 
   let showCss = {};
 
@@ -230,21 +169,50 @@ export default function OtherProjets() {
           </div>
           <h4>Liens</h4>
           <div className={styles.contentModalRightLinks}>
-            <a href={infosOtherProjets[id - 6].link[0]} target="_blank">
-              Voir sur github
-            </a>
-
-            <a
-              href={infosOtherProjets[id - 6].link[2]}
-              target="_blank"
-              className={styles.goToWeb}
-            >
-              <FontAwesomeIcon
-                className={styles.iconGoToWeb}
-                icon={faGlobe}
-              ></FontAwesomeIcon>
-              Voir le site
-            </a>
+            {infosOtherProjets[id - 6].link.length == 0 ? (
+              <button>Pas encore de lien 😖</button>
+            ) : infosOtherProjets[id - 6].link.length == 1 ? (
+              <a href={infosOtherProjets[id - 6].link[0]} target="_blank">
+               Lien vers la page
+              </a>
+            ) : infosOtherProjets[id - 6].link.length == 2 ? (
+              <>
+                <a href={infosOtherProjets[id - 6].link[0]} target="_blank">
+                  Voir sur github
+                </a>
+                <a
+                  href={infosOtherProjets[id - 6].link[1]}
+                  target="_blank"
+                  className={styles.goToWeb}
+                >
+                  <FontAwesomeIcon
+                    className={styles.iconGoToWeb}
+                    icon={faGlobe}
+                  ></FontAwesomeIcon>
+                  Voir le site
+                </a>
+              </>
+            ) : (
+              <>
+                <a href={infosOtherProjets[id - 6].link[0]} target="_blank">
+                  Lien vers FrontEnd
+                </a>
+                <a href={infosOtherProjets[id - 6].link[1]} target="_blank">
+                  Lien vers BackEnd
+                </a>
+                <a
+                  href={infosOtherProjets[id - 6].link[2]}
+                  target="_blank"
+                  className={styles.goToWeb}
+                >
+                  <FontAwesomeIcon
+                    className={styles.iconGoToWeb}
+                    icon={faGlobe}
+                  ></FontAwesomeIcon>
+                  Voir le site
+                </a>
+              </>
+            )}
           </div>
         </div>
       </div>

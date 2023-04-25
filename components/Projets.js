@@ -69,27 +69,27 @@ export default function Projets() {
       id: "3",
       titre: "Site d'informations",
       description:
-        "Dans le cadre de notre projet , nous avons réalisé un site d'informations en seulement 2 jours.",
+        "J'ai revisité un projet fait pendant la formation , à ma façon . C'est un site d'informations fait en React ,qui affiche les dernières infos (grâces à une API) j'ai réutilisé les mêmes technologies comme NodeJs et Express",
       image: "/background_images/4.jpg",
 
       techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
       link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
+        "https://github.com/oussamadabachil/frontend-oussnews-three",
+        "https://github.com/oussamadabachil/backend-oussnews-twoo",
+        "https://frontend-oussnews-twoo-qrg6-8n1y1wcqz-oussamadabachil.vercel.app/",
       ],
     },
     {
       id: "4",
       titre: "Site d'affiches de films",
       description:
-        "Dans le cadre de notre projet , nous avons réalisé un site d'affiches de films en seulement 2 jours.",
+      "J'ai revisité un projet fait pendant la formation , à ma façon . C'est un site qui affiche les dernières affiches de film , depuis une API  , j'ai réutilisé les mêmes technologies comme NodeJs et Express",
       image: "/background_images/5.jpg",
       techno: ["React", "Next", "MongoDb", "Express", "NodeJs", "API"],
       link: [
-        "https://github.com/oussamadabachil/frontend-teewt",
-        "https://github.com/oussamadabachil/backend-teewt",
-        "https://frontend-teewt.vercel.app/",
+        "https://github.com/oussamadabachil/vercel_ouflix_frontend",
+        "https://github.com/oussamadabachil/vercel_oussflix_backend",
+        "https://vercel-ouflix-frontend.vercel.app/",
       ],
     },
   ];
@@ -156,7 +156,51 @@ export default function Projets() {
           </div>
           <h4>Liens</h4>
           <div className={styles.contentModalRightLinks}>
-            <a href={infosProjets[id - 1].link[0]} target="_blank">
+          {infosProjets[id - 1].link.length == 0 ? (
+              <button>Pas encore de lien 😖</button>
+            ) : infosProjets[id - 1].link.length == 1 ? (
+              <a href={infosProjets[id - 1].link[0]} target="_blank">
+               Lien vers la page
+              </a>
+            ) : infosProjets[id - 1].link.length == 2 ? (
+              <>
+                <a href={infosProjets[id - 1].link[0]} target="_blank">
+                  Voir sur github
+                </a>
+                <a
+                  href={infosProjets[id - 1].link[1]}
+                  target="_blank"
+                  className={styles.goToWeb}
+                >
+                  <FontAwesomeIcon
+                    className={styles.iconGoToWeb}
+                    icon={faGlobe}
+                  ></FontAwesomeIcon>
+                  Voir le site
+                </a>
+              </>
+            ) : (
+              <>
+                <a href={infosProjets[id - 1].link[0]} target="_blank">
+                  Lien vers FrontEnd
+                </a>
+                <a href={infosProjets[id - 1].link[1]} target="_blank">
+                  Lien vers BackEnd
+                </a>
+                <a
+                  href={infosProjets[id - 1].link[2]}
+                  target="_blank"
+                  className={styles.goToWeb}
+                >
+                  <FontAwesomeIcon
+                    className={styles.iconGoToWeb}
+                    icon={faGlobe}
+                  ></FontAwesomeIcon>
+                  Voir le site
+                </a>
+              </>
+            )}
+            {/* <a href={infosProjets[id - 1].link[0]} target="_blank">
               Voir sur github
             </a>
          
@@ -170,7 +214,7 @@ export default function Projets() {
                 icon={faGlobe}
               ></FontAwesomeIcon>
               Voir le site
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
