@@ -19,6 +19,7 @@ import Swal from "sweetalert2";
 
 // CommonJS
 import config from "react-reveal/globals";
+import { set } from "mongoose";
 
 export default function Home() {
   const Swal = require("sweetalert2");
@@ -84,8 +85,35 @@ export default function Home() {
 
   const [seeMore, setSeeMore] = useState(false);
 
+  const [counter , setCounter ] = useState(1) 
+  let displayCssTextB = {
+    'display':'none'
+  }
+
   const actionSeeMore = () => {
-    setSeeMore(true);
+
+    setCounter(counter+1)
+
+    console.log(counter)
+
+
+    if(counter==1){
+      setSeeMore(true);
+
+    }else{
+
+      Swal.fire({
+        title: "Patience !",
+        text: "D'autres projets sont en route",
+        imageUrl: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTUwYTE2MjFmYTNjZmRlYWI5M2ZmNTAzYjgxNmNiZDE2OTM3N2QzNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/ZVik7pBtu9dNS/giphy.gif',
+        imageWidth:290,
+        imageHeight:220,
+        imageAlt: 'Custom image',
+               confirmButtonText: "Je patiente",
+      });
+
+    }
+  
   };
 
   let seeMoreProjets = {};
@@ -583,7 +611,7 @@ export default function Home() {
               >
                 <OtherProjets />
               </div>
-              <a href="#proj2" className={styles.seeMoreProjets} onClick={actionSeeMore}>
+              <a href="#proj2"  style={{displayCssTextB}} className={styles.seeMoreProjets} onClick={actionSeeMore}>
                 Voir d'autres projets
               </a>
             </div>
