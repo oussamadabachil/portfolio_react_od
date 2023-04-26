@@ -85,35 +85,30 @@ export default function Home() {
 
   const [seeMore, setSeeMore] = useState(false);
 
-  const [counter , setCounter ] = useState(1) 
+  const [counter, setCounter] = useState(1);
   let displayCssTextB = {
-    'display':'none'
-  }
+    display: "none",
+  };
 
   const actionSeeMore = () => {
+    setCounter(counter + 1);
 
-    setCounter(counter+1)
+    console.log(counter);
 
-    console.log(counter)
-
-
-    if(counter==1){
+    if (counter == 1) {
       setSeeMore(true);
-
-    }else{
-
+    } else {
       Swal.fire({
         title: "Patience !",
         text: "D'autres projets sont en route",
-        imageUrl: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTUwYTE2MjFmYTNjZmRlYWI5M2ZmNTAzYjgxNmNiZDE2OTM3N2QzNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/ZVik7pBtu9dNS/giphy.gif',
-        imageWidth:290,
-        imageHeight:220,
-        imageAlt: 'Custom image',
-               confirmButtonText: "Je patiente",
+        imageUrl:
+          "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTUwYTE2MjFmYTNjZmRlYWI5M2ZmNTAzYjgxNmNiZDE2OTM3N2QzNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/ZVik7pBtu9dNS/giphy.gif",
+        imageWidth: 290,
+        imageHeight: 220,
+        imageAlt: "Custom image",
+        confirmButtonText: "Je patiente",
       });
-
     }
-  
   };
 
   let seeMoreProjets = {};
@@ -456,7 +451,9 @@ export default function Home() {
               </div>
             </Reveal>
           </div>
-          <h3 id='comp'className={styles.titleAccueil}>Mes compétences</h3>
+          <h3 id="comp" className={styles.titleAccueil}>
+            Mes compétences
+          </h3>
           <section className={styles.containerthree}>
             <div className={styles.containerCompetence}>
               <Reveal effect="fadeInLeft">
@@ -558,7 +555,6 @@ export default function Home() {
                         <hr className={styles.animatedHr}></hr>
                       </span>
                     </li>
-                  
                   </ul>
                 </div>
               </Reveal>
@@ -573,7 +569,7 @@ export default function Home() {
                 <div className={styles.blockRightSkillsBackend}>
                   <ul>
                     <li>
-                     GraphQL
+                      GraphQL
                       <span>
                         <hr className={styles.animatedHr}></hr>
                       </span>
@@ -587,31 +583,40 @@ export default function Home() {
                     <li>
                       MongoDB
                       <span>
-                        <hr style={{
-
-                          margin:'10px 0 20px'
-                        }}className={styles.animatedHr}></hr>
+                        <hr
+                          style={{
+                            margin: "10px 0 20px",
+                          }}
+                          className={styles.animatedHr}
+                        ></hr>
                       </span>
-                    </li>    
+                    </li>
                   </ul>
                 </div>
               </Reveal>
             </div>
           </section>
           <div className={styles.containerProjets}>
-            <h3 id='proj'className={styles.titleAccueil2}>Mes projets</h3>
+            <h3 id="proj" className={styles.titleAccueil2}>
+              Mes projets
+            </h3>
             <div className={styles.ProjetsContainer}>
               <div className={styles.mesProjetsContainer}>
                 <Projets />
               </div>
               <div
-              id="proj2"
+                id="proj2"
                 className={styles.mesProjetsContainer}
                 style={seeMoreProjets}
               >
                 <OtherProjets />
               </div>
-              <a href="#proj2"  style={{displayCssTextB}} className={styles.seeMoreProjets} onClick={actionSeeMore}>
+              <a
+                href="#proj2"
+                style={{ displayCssTextB }}
+                className={styles.seeMoreProjets}
+                onClick={actionSeeMore}
+              >
                 Voir d'autres projets
               </a>
             </div>
@@ -633,7 +638,7 @@ export default function Home() {
             </div>
           </div> */}
 
-          <h2 id='cont'>Me contacter</h2>
+          <h2 id="cont">Me contacter</h2>
           <Reveal effect="fadeInUp">
             <form className={styles.flexContactBox} onSubmit={handleSubmit}>
               <label>Votre nom complet</label>
