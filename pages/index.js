@@ -82,9 +82,7 @@ export default function Home() {
   };
 
   config({ ssrFadeout: true });
-
   const [seeMore, setSeeMore] = useState(false);
-
   const [counter, setCounter] = useState(1);
   let displayCssTextB = {
     display: "none",
@@ -496,6 +494,18 @@ export default function Home() {
                     </li>
                     <li>
                       Redux
+                      <span>
+                        <hr className={styles.animatedHr}></hr>
+                      </span>
+                    </li>
+                    <li>
+                      Angular
+                      <span>
+                        <hr className={styles.animatedHr}></hr>
+                      </span>
+                    </li>
+                    <li>
+                      Django
                       <span>
                         <hr className={styles.animatedHr}></hr>
                       </span>
